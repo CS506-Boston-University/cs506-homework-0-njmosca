@@ -20,12 +20,12 @@ def import_data(filename):
     #last element of each row
     y = []
     #counting attributes
+    attributes = []
     count = 0
     # cleaning each row
     data = file.readlines()
     for line in data:
         line = line.split(',')
-        
         for element in line:
             count +=1
             if element == "?":
@@ -33,12 +33,12 @@ def import_data(filename):
                 element = float('NaN')
             else:
                 element = float(element)
-            if element == '-':
-                element = element.strip('-')
             if count != 280:
-                X.append(element)
+                attributes.append(element)
             if count == 280:
                 y.append(element)
+                X.append(attributes)
+                attributes = []
                 count = 0
             
         # need to add 279 then restart
