@@ -51,7 +51,7 @@ def import_data(filename):
         
              
  
-import_data('arrhythmia.data')
+X , y =import_data('arrhythmia.data')
     
    
 
