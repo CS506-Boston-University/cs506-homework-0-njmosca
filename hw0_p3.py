@@ -8,7 +8,7 @@ import numpy as np
 import random
 import math
 
-
+test = [[20,4,67,6,1,2,2,1000],[0,9,8,3,5,6,5,5,10,2,]]
 #3a
 #create function that shuffles data in both X and y
 # shuffle X then match y? or shuffle both?
@@ -25,7 +25,7 @@ def shuffle_data(X, y):
     for i in random_list:
         new_X.append(X[i])
         new_y.append(y[i])
-    return X, y
+    return new_X, new_y
 
 #3b
 # transpose X 
@@ -49,7 +49,7 @@ def compute_std(X):
 #3c
 #transpose
 #function that removes features that are not within two std of mean of a given feature(row)
-#compute std for each row, remove enties within 2 std of mean of
+#compute std for each row, remove entries within 2 std of mean of
 
 def mean(l):
     ''' calculates mean of  list'''
@@ -60,8 +60,8 @@ def remove_outlier( X, y):
     ''' removes value that is more than 2 std away from mean'''
     X = transpose(X)
     keepers = []
-    new_X = [[]] * len(X)
-    ol = [[]] * len(X)
+    new_X = [] * len(X)
+    ol = [] * len(X)
     new_y = []
     oly = []
     for feature in X:
@@ -77,7 +77,7 @@ def remove_outlier( X, y):
                 keepers.append(value)
         new_X.append(keepers)
         keepers = []
-    #import pdb; pdb.set_trace()
+    import pdb; pdb.set_trace()
                 
     # have to do the same for y?
     # y is 1-16 and should stay same length as len(X) would not want to delete?
@@ -90,8 +90,9 @@ def remove_outlier( X, y):
             oly.append(value)
         else:
             new_y.append(value)
-
-    return new_X ,new_y
+    #transpsoe back
+    
+    return transpose(new_X) ,new_y
 
 
     
@@ -99,3 +100,27 @@ def remove_outlier( X, y):
 #3d
 #transpose
 # helper function that takes value - mean // std of list  (x to x prime)
+# apply to X
+
+def standard(l):
+    ''' standardizes row'''
+    m = sum(l)/len(l)
+    std = std_row(l)
+    s_list = [] * len(l)
+    for value in l:
+        #how to tackle divide by 0 errors
+        if value == float(0):
+            s_list.append(value)
+        else:
+            s_list.append((value - m) // std) # rounds
+    return s_list 
+
+def standardize_data(X):
+    ''' takes nested list X and converts values in sub lists to standardized values'''
+    X = transpose(X)
+    new_X = [] * len(X)
+    #first Loop
+    for l in X:
+        new_X.append(standard(l))
+    return transpose(new_X)
+
