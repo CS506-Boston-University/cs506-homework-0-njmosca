@@ -2,7 +2,6 @@
 #CS506
 #Impute or delete missing entries
 import math
-import statistics as stats
 from hw0_p1 import import_data
 
 
