@@ -3,7 +3,7 @@
 
 #import non numerical data
 
-test = ['548', '2', 'male', '', '0', '0', '13.8625', 'C']
+#test = ['548', '2', 'male', '', '0', '0', '13.8625', 'C']
 #convert str to int and 
     # convert floats
     # missing = float('nan')
@@ -38,7 +38,6 @@ def import_data2(file):
     returns y = survived feature that will be numerical
     returns X thats the remaining features'''
    
-
     file = open(file, 'r')
     X = []
     y = []
@@ -48,10 +47,10 @@ def import_data2(file):
         temp = []
         q1 = line.find('"') # first quote
         q2 = line.rfind('"') # last quote
-        
+        #cleaning column
         row_entries1 = line[0:q1].strip(',').split(',')
         row_entries2 = line[q2+1:].strip(',').split(',')
-        
+        #adding to new list
         temp.append(row_entries1[0])
         temp.append(row_entries1[2])
         temp.append(row_entries2[0])

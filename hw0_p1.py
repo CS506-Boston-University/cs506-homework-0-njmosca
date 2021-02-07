@@ -1,14 +1,6 @@
 #Author Nicholas Mosca
 # Description hw0 problem 1
 
-#parse and preprocess data
-#no pandas
-#load data in
-# loop through each line
-#convert to string
-# replace ? with NaN
-#loop based on , split 
-# convert all to float
 
 import math
 
@@ -45,11 +37,6 @@ def import_data(filename):
     return X, y
                 
         
-            
-    
-    
-        
-             
  
 X , y =import_data('arrhythmia.data')
     

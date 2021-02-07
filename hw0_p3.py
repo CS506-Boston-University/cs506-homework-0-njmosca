@@ -8,13 +8,11 @@ import numpy as np
 import random
 import math
 
-test = [[20,4,67,6,1,2,2,1000],[0,9,8,3,5,6,5,5,10,2,]]
+
+#testing 
+#test = [[20,4,67,6,1,2,2,1000],[0,9,8,3,5,6,5,5,10,2,]]
 #3a
 #create function that shuffles data in both X and y
-# shuffle X then match y? or shuffle both?
-#create random list size of input ( numpy array) 0 - 67
-# new list of indexs
-#set index of empty list to the 
 
 def shuffle_data(X, y):
     ''' shuffles both X and Y''' 
@@ -45,7 +43,6 @@ def compute_std(X):
         std_list.append(std_row(l))
     return std_list
         
-
 #3c
 #transpose
 #function that removes features that are not within two std of mean of a given feature(row)
@@ -93,9 +90,6 @@ def remove_outlier( X, y):
     #transpsoe back
     
     return transpose(new_X) ,new_y
-
-
-    
 
 #3d
 #transpose

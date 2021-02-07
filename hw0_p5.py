@@ -20,7 +20,7 @@ def train_test_split(X, y, t_f):
     split_y = np.split(y,[int(t_f * len(y))]) 
     # shuffle
     split_x,split_y = shuffle_data(split_x,split_y)
-
+    # assigning segments
     x_train = split_x[1]
     x_test = split_x[0]
     y_train = split_y[1]

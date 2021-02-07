@@ -5,12 +5,10 @@ import math
 from hw0_p1 import import_data
 
 
-
-
 X, y = import_data('arrhythmia.data')
-
-test = [[float('nan'),2,3,4],[1,2,3,float('nan')],[2,2,4,5],[1,2,5,6,]]
-testy = [0,1,2,3]
+# used to test functions
+#test = [[float('nan'),2,3,4],[1,2,3,float('nan')],[2,2,4,5],[1,2,5,6,]]
+#testy = [0,1,2,3]
 #Helper Functions
 
 def transpose(x):
@@ -43,7 +41,6 @@ def replace_nan(l,value):
 
     return new_list
             
-
 
 #2a
 def impute_missing(X):
@@ -114,11 +111,6 @@ def discard_missing(X,y):
             old_y.append(y[row])
 
     return new_X, new_y, old_X,old_y
-
-
-
-
-
 
 
 clean_x, clean_y, dirty_x,dirty_y = discard_missing(X,y)   
