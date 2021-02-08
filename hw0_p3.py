@@ -69,12 +69,12 @@ def remove_outlier( X, y):
         
         for value in feature: 
             if abs(value) > abs(compare_value1) or abs(value) < abs(compare_value2):
-                ol.append(value)
+                ol.append(feature) # remove row
             else:
-                keepers.append(value)
+                keepers.append(feature)# new list of rows
         new_X.append(keepers)
         keepers = []
-    import pdb; pdb.set_trace()
+    #import pdb; pdb.set_trace()
                 
     # have to do the same for y?
     # y is 1-16 and should stay same length as len(X) would not want to delete?
@@ -84,7 +84,7 @@ def remove_outlier( X, y):
         high = y_mean + 2 * std_y
         low = y_mean - 2* std_y
         if abs(value) > abs(high) or abs(value) < abs(low):
-            oly.append(value)
+            oly.append(value) # removing individual elements 
         else:
             new_y.append(value)
     #transpsoe back
@@ -109,6 +109,8 @@ def standard(l):
             s_list.append((value - m) // std) # rounds
     return s_list 
 
+
+
 def standardize_data(X):
     ''' takes nested list X and converts values in sub lists to standardized values'''
     X = transpose(X)
@@ -118,3 +120,7 @@ def standardize_data(X):
         new_X.append(standard(l))
     return transpose(new_X)
 
+'''I have not heard of BigO notation before nor have i seen course material realted to it.
+From what i have gathered it is a metric used to determine how fast and effective a given algorithm can be.append
+In problem 3d the function has to loop through whatever size X is and append values via helper function. The 
+BigO notation should be O(X) since its dependent on the size of X'''
