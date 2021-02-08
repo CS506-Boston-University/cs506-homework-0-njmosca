@@ -123,4 +123,4 @@ def standardize_data(X):
 '''I have not heard of BigO notation before nor have i seen course material realted to it.
 From what i have gathered it is a metric used to determine how fast and effective a given algorithm can be.append
 In problem 3d the function has to loop through whatever size X is and append values via helper function. The 
-BigO notation should be O(X) since its dependent on the size of X'''
+BigO notation should be O(Xn) since its dependent on n columns and X rows'''
