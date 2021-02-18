@@ -1,0 +1,27 @@
+1.Parse and Preprocess Data
+- Correct parsing and storing (1/2) - not generalized for any data file
+- Addressed NaN entries (1/1)
+
+2.Impute or delete missing entries
+- Impute NaN with median of feature (1/1)
+- Median is addressed for even and odd list size (1/1) 
+- Explanation for median (1/1)
+- Discard NaN entries (1/1)
+
+3.Working with the data
+- Shuffling the data (2/2)
+- Std of each feature (1/1)
+- Remove entries containing value more than 2 std from mean (2/2) 
+- Standardize data points (2/2)
+- Time and Space Complexity of standardization (0.5/1) - good effort and right idea
+
+4. Working with non-numerical data
+- Gender manipulation (1/1)
+- Embarked feature manipulation (2/2)
+
+5. Train-test split
+- Shuffle data (1/1)
+- Split dataset (3/3)
+- Create cross-validation set (3/3)
+
+Total: 23.5/25
